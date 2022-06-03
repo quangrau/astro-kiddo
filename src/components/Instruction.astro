@@ -1,0 +1,27 @@
+---
+
+interface Props {
+  style?: any
+}
+
+const { style } = Astro.props as Props;
+
+---
+
+<section style={style} class="instructions">
+  <slot />
+</section>
+
+<style>
+  .instructions {
+    --color: var(--color-bg);
+    --background: var(--color-astro-violet);
+
+    color: var(--color);
+    background: var(--background);
+    padding: 2em;
+    margin: 1em 1em 3em 1em;
+    border-radius: 0.4rem;
+    line-height: 1.6;
+  }
+</style>

@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Main from '../components/Main.astro';
+import Instruction from '../components/Instruction.astro';
+import { getActivities } from '../lib/api';
+
+function isVideo(src) {
+  return src.match(/.mp4|.mov/g);
+}
+
+const activities = await getActivities();
+---
+
+<Layout title="Activities Page">
+  <Navbar title="Activities" />
+  <Main>
+    <Instruction style={ `--color: var(--color-dusk); --background: var(--gradient-pop-3);` }>
+      <strong>
+        Be sure to check out important announcements from the center.
+      </strong>
+    </Instruction>
+    <ul>
+      {activities.map(item => (
+      <li>
+        <article>
+          <h2 class="title">{item.title}</h2>
+          <p class="date">
+            <time datetime={item.date}>{item.date}</time>
+          </p>
+          <p class="description">{item.description}</p>
+          <section class="gallery">
+            {item.photos.map(photo => {
+
+            if (isVideo(photo)) return null;
+
+            return (
+            <figure>
+              <img class="image" loading="lazy" alt={item.title} src={`https://app.kinderconnect.sg${photo}`}
+                width="350" />
+            </figure>
+            );
+            })}
+          </section>
+        </article>
+      </li>
+      ))}
+    </ul>
+  </Main>
+</Layout>
+
+
+<style>
+  ul,
+  li,
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+
+  .title {
+    margin: 1em 0;
+    font-weight: 900;
+    background: var(--gradient-pop-1, var(--gradient-pop-1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .date {
+    display: inline-block;
+    margin: 0;
+    padding: .5em;
+    font-weight: 400;
+    background-color: var(--color-tan);
+  }
+
+  article {
+    padding: 1em;
+    background: var(--color-yellow);
+    border-radius: .5em;
+  }
+
+  figure:is(:hover, :focus-within) .image {
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    border: .2em solid var(--color-tan);
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+  }
+
+  .image {
+    width: 100%;
+    min-width: 350px;
+    max-width: 1000px;
+    border: .2em solid transparent;
+    transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+</style>

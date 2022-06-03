@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Instruction from '../components/Instruction.astro';
+import Navbar from '../components/Navbar.astro';
+import Main from '../components/Main.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<Navbar leading={false} align="center" title="Astro Kiddo" />
+	<Main>
+		<Instruction>
+			Check out the <code>src/pages</code> directory to get started.<br />
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		</Instruction>
+
+		<ul role="list" class="link-card-grid">
+			<Card href="/announcements" title="Announcements"
+				body="Supercharge your project with new frameworks and libraries." />
+			<Card href="/activities" title="Activities" body="Learn how Astro works and explore the official API docs." />
+			<Card href="/events" title="Events" body="Explore a galaxy of community-built starter themes." />
+			<Card href="/documents" title="Documents" body="Come say hi to our amazing Discord community. ❤️" />
+		</ul>
+	</Main>
+</Layout>
+
+<style>
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 1rem;
+	}
+</style>
