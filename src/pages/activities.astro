@@ -1,9 +1,11 @@
 ---
+import { Picture } from "astro-imagetools/components";
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Main from '../components/Main.astro';
 import Instruction from '../components/Instruction.astro';
 import { getActivities } from '../lib/api';
+import Pagination from '../components/Pagination.astro';
 
 function isVideo(src) {
   return src.match(/.mp4|.mov/g);
@@ -39,10 +41,8 @@ const activities = await getActivities(page, pageSize);
             if (isVideo(photo)) return null;
 
             return (
-            <figure>
-              <img class="image" loading="lazy" alt={item.title} src={`https://app.kinderconnect.sg${photo}`}
-                width="350" />
-            </figure>
+            <Picture alt={item.title} src={`https://app.kinderconnect.sg${photo}`}
+              sizes="(min-width: 300px) 1024px, 100vw" />
             );
             })}
           </section>
@@ -50,23 +50,7 @@ const activities = await getActivities(page, pageSize);
       </li>
       ))}
     </ul>
-    <div class="activities-list-nav">
-      { page > 1 ?
-      <a class="page-link" href={`?page=${page - 1}`} aria-label="Previous Page">
-        {"<"} prev </a>
-          :
-          <span class="page-link disabled" aria-hidden="true">{"<"} prev</span>
-              }
-              <span>page {page}</span>
-              <!-- sometimes the length isn't 30? -->
-              { activities.length >= pageSize ?
-              <a class="page-link" href={`?page=${page + 1}`} aria-label="Next Page">
-                more {">"}
-              </a>
-              :
-              <span class="page-link" aria-hidden="true">more {">"}</span>
-              }
-    </div>
+    <Pagination currentPage={page} hasNextPage={activities.length>= pageSize} />
   </Main>
 </Layout>
 
@@ -117,32 +101,7 @@ const activities = await getActivities(page, pageSize);
 
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-  }
-
-  .image {
-    width: 100%;
-    min-width: 350px;
-    max-width: 1000px;
-    border: .2em solid transparent;
-    transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .activities-list-nav {
-    padding: 15px 30px;
-    text-align: center;
-    top: 55px;
-    left: 0;
-    right: 0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-
-  .activities-list-nav .page-link {
-    margin: 0 1em;
-  }
-
-  .activities-list-nav .disabled {
-    color: #aaa;
   }
 </style>

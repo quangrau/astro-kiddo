@@ -3,9 +3,10 @@ export interface Props {
   title: string,
   align?: 'left' | 'center' | 'right',
   leading?: boolean,
+  size?: 'base' | 'lg' | 'xl',
 };
 
-const { align = 'left', leading = true, title } = Astro.props as Props;
+const { align = 'left', size = 'lg', leading = true, title } = Astro.props as Props;
 ---
 
 <header>
@@ -19,7 +20,7 @@ const { align = 'left', leading = true, title } = Astro.props as Props;
       </div>
     </a>
     )}
-    <h1 class="text-gradient" style={`text-align: ${align};`}>
+    <h1 class={`title text-gradient ${size}`} style={`text-align: ${align};`}>
       {title}
     </h1>
   </nav>
@@ -30,6 +31,18 @@ const { align = 'left', leading = true, title } = Astro.props as Props;
     margin: auto;
     padding: 1em 0;
     max-width: 1024px;
+  }
+
+  .title.base {
+    font-size: var(--font-size-base);
+  }
+
+  .title.lg {
+    font-size: var(--font-size-lg);
+  }
+
+  .title.xl {
+    font-size: var(--font-size-xl);
   }
 
   .nav-wrapper {

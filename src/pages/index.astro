@@ -7,13 +7,8 @@ import Main from '../components/Main.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<Navbar leading={false} align="center" title="Astro Kiddo" />
+	<Navbar leading={false} size="xl" align="center" title="Astro Kiddo" />
 	<Main>
-		<Instruction>
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</Instruction>
-
 		<ul role="list" class="link-card-grid">
 			<Card href="/announcements" title="Announcements"
 				body="Supercharge your project with new frameworks and libraries." />
@@ -27,8 +22,9 @@ import Main from '../components/Main.astro';
 <style>
 	.link-card-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
 		gap: 1rem;
 		padding: 1rem;
+		margin: 0;
 	}
 </style>

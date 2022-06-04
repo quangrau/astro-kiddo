@@ -1,0 +1,56 @@
+---
+const { currentPage, hasNextPage } = Astro.props;
+
+---
+
+<div class="pagination-nav">
+  <ul class="wrapper">
+    <li>
+      {currentPage > 1
+      ? <a class="page-link" href={`?page=${currentPage - 1}`} aria-label="Previous Page">{`< prev`}</a>
+          : <span class="page-link disabled" aria-hidden="true">{`< prev`}</span>
+              }
+    </li>
+    <li>
+      <span>[{currentPage}]</span>
+    </li>
+    <li>
+
+      {hasNextPage ?
+      <a class="page-link" href={`?page=${currentPage + 1}`} aria-label="Next Page">{`more >`}</a>
+      :
+      <span class="page-link disabled" aria-hidden="true">{`more >`}</span>
+      }
+    </li>
+  </ul>
+</div>
+
+<style>
+  .pagination-nav {
+    padding: 15px 30px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .pagination-nav .page-link {
+    margin: 0 1em;
+    color: var(--color-astro-pink);
+  }
+
+  .pagination-nav .disabled {
+    color: #aaa;
+  }
+
+  .wrapper {
+    max-width: 640px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .wrapper li {}
+</style>

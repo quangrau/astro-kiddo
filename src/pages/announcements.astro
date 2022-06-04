@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.astro';
 import Instruction from '../components/Instruction.astro';
 import Main from '../components/Main.astro';
 import { getAnnouncements } from '../lib/api';
+import Pagination from '../components/Pagination.astro';
 
 const url = new URL(Astro.request.url);
 const page = +(url.searchParams.get("page") || 1);
@@ -25,23 +26,8 @@ const announcements = await getAnnouncements(page, pageSize);
       <Card href={item.link} title={item.title} subTitle={item.date} body={item.description} />
       ))}
     </ul>
-    <div class="list-nav">
-      { page > 1 ?
-      <a class="page-link" href={`?page=${page - 1}`} aria-label="Previous Page">
-        {"<"} prev </a>
-          :
-          <span class="page-link disabled" aria-hidden="true">{"<"} prev</span>
-              }
-              <span>page {page}</span>
-              <!-- sometimes the length isn't 30? -->
-              {announcements.length >= pageSize ?
-              <a class="page-link" href={`?page=${page + 1}`} aria-label="Next Page">
-                more {">"}
-              </a>
-              :
-              <span class="page-link" aria-hidden="true">more {">"}</span>
-              }
-    </div>
+
+    <Pagination currentPage={page} hasNextPage={announcements.length>= pageSize} />
   </Main>
 </Layout>
 
@@ -51,22 +37,5 @@ const announcements = await getAnnouncements(page, pageSize);
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
-  }
-
-  .list-nav {
-    padding: 15px 30px;
-    text-align: center;
-    top: 55px;
-    left: 0;
-    right: 0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-
-  .list-nav .page-link {
-    margin: 0 1em;
-  }
-
-  .list-nav .disabled {
-    color: #aaa;
   }
 </style>
