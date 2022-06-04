@@ -1,16 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@astrojs/netlify': ^0.4.1
-  astro: ^1.0.0-beta.38
+  '@astrojs/netlify': ^0.4.2
+  astro: ^1.0.0-beta.40
   astro-imagetools: ^0.6.9
 
 dependencies:
-  astro-imagetools: 0.6.9_astro@1.0.0-beta.38
+  astro-imagetools: 0.6.9_astro@1.0.0-beta.40
 
 devDependencies:
-  '@astrojs/netlify': 0.4.1
-  astro: 1.0.0-beta.38
+  '@astrojs/netlify': 0.4.2
+  astro: 1.0.0-beta.40
 
 packages:
 
@@ -70,8 +70,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/netlify/0.4.1:
-    resolution: {integrity: sha512-9za/iIUd8fasybVIVIKx2X91AjBoCfuPo98nv8jd8lZgrXz2u2pMHDu8CAeXKCpVp2DY22QdlWyT7JZVSqo8SQ==}
+  /@astrojs/netlify/0.4.2:
+    resolution: {integrity: sha512-t5WvkEO9PkFDZWrefOE45SkK2f1F4fEgC3+6npenHax1s1BwOX8Sktgjk7+Qm6HOEF2NotZaTu3T31oxJkaY7Q==}
     dependencies:
       '@astrojs/webapi': 0.12.0
     dev: true
@@ -99,14 +99,14 @@ packages:
       escalade: 3.1.1
       is-docker: 3.0.0
       is-wsl: 2.2.0
-      node-fetch: 3.2.4
+      node-fetch: 3.2.5
     transitivePeerDependencies:
       - supports-color
 
   /@astrojs/webapi/0.12.0:
     resolution: {integrity: sha512-rie5SYbvXVykKYBsNFnkUtDe7/0mGmrvj7Gg5pOKV34Cg/CrCJbvUSwH2oyCG2OLGtN2ttUOLvSgnVq3eipCsQ==}
     dependencies:
-      node-fetch: 3.2.4
+      node-fetch: 3.2.5
 
   /@astropub/codecs/0.4.4:
     resolution: {integrity: sha512-jHmdZK2B7dfelTsVzkWVb93WPjuKkHz07xUcyg5WtUxTeCCxdDVLnvZlsB5PC2r7HmJLf03TP1QYb1ZgrEebyQ==}
@@ -899,14 +899,14 @@ packages:
     dependencies:
       tslib: 2.4.0
 
-  /astro-imagetools/0.6.9_astro@1.0.0-beta.38:
+  /astro-imagetools/0.6.9_astro@1.0.0-beta.40:
     resolution: {integrity: sha512-VLBvvLdiyuZq0y3DUIYLshJ/HJfszJgcB8PKRqS95UnI6DX8/u9+RMsZ6he310A5YiJYyE1+4vtXTvGO6xi/YQ==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       astro: '>=0.26 || >=1.0.0-beta'
     dependencies:
       '@astropub/codecs': 0.4.4
-      astro: 1.0.0-beta.38
+      astro: 1.0.0-beta.40
       file-type: 17.1.1
       find-cache-dir: 3.3.2
       find-up: 6.3.0
@@ -916,8 +916,8 @@ packages:
       imagetools-core: 3.0.2
     dev: false
 
-  /astro/1.0.0-beta.38:
-    resolution: {integrity: sha512-Xbmt42mnFNCxnnrvZgQFdMkjhdAlKlMNz9a/d4KlYjPlLzJCTK+bzTEllmfu2v+2k3Y/jGvrW7gWiRe38n4ORw==}
+  /astro/1.0.0-beta.40:
+    resolution: {integrity: sha512-7TbwTp6S3cMffrK+aRSCzU8sMPJ+6UC0pQeKkO+LvI9AQHheUv69edZckW55SDJcHZhScDnwBwXuyE4ZGYxtzQ==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1038,8 +1038,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001344
-      electron-to-chromium: 1.4.143
+      caniuse-lite: 1.0.30001346
+      electron-to-chromium: 1.4.146
       escalade: 3.1.1
       node-releases: 2.0.5
       picocolors: 1.0.0
@@ -1072,8 +1072,8 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
-  /caniuse-lite/1.0.30001344:
-    resolution: {integrity: sha512-0ZFjnlCaXNOAYcV7i+TtdKBp0L/3XEU2MF/x6Du1lrh+SRX4IfzIVL4HNJg5pB2PmFb8rszIGyOvsZnqqRoc2g==}
+  /caniuse-lite/1.0.30001346:
+    resolution: {integrity: sha512-q6ibZUO2t88QCIPayP/euuDREq+aMAxFE5S70PkrLh0iTDj/zEhgvJRKC2+CvXY6EWc6oQwUR48lL5vCW6jiXQ==}
 
   /ccount/2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -1223,8 +1223,8 @@ packages:
     dependencies:
       ms: 2.1.2
 
-  /decode-named-character-reference/1.0.1:
-    resolution: {integrity: sha512-YV/0HQHreRwKb7uBopyIkLG17jG6Sv2qUchk9qSoVJ2f+flwRsPNBO0hAnjt6mTNYUT+vw9Gy2ihXg4sUWPi2w==}
+  /decode-named-character-reference/1.0.2:
+    resolution: {integrity: sha512-O8x12RzrUF8xyVcY0KJowWsmaJxQbmy0/EtnNtHRpsOcT7dFk5W598coHqBVpmWo1oQQfsCqfCmkZN5DJrZVdg==}
     dependencies:
       character-entities: 2.0.1
 
@@ -1324,8 +1324,8 @@ packages:
   /eastasianwidth/0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  /electron-to-chromium/1.4.143:
-    resolution: {integrity: sha512-2hIgvu0+pDfXIqmVmV5X6iwMjQ2KxDsWKwM+oI1fABEOy/Dqmll0QJRmIQ3rm+XaoUa/qKrmy5h7LSTFQ6Ldzg==}
+  /electron-to-chromium/1.4.146:
+    resolution: {integrity: sha512-4eWebzDLd+hYLm4csbyMU2EbBnqhwl8Oe9eF/7CBDPWcRxFmqzx4izxvHH+lofQxzieg8UbB8ZuzNTxeukzfTg==}
 
   /emmet/2.3.6:
     resolution: {integrity: sha512-pLS4PBPDdxuUAmw7Me7+TcHbykTsBKN/S9XJbUOMFQrNv9MoshzyMFK/R57JBm94/6HSL4vHnDeEmxlC82NQ4A==}
@@ -1946,7 +1946,7 @@ packages:
       html-void-elements: 2.0.1
       property-information: 6.1.1
       space-separated-tokens: 2.0.1
-      stringify-entities: 4.0.2
+      stringify-entities: 4.0.3
       unist-util-is: 5.1.1
 
   /hast-util-to-parse5/7.0.0:
@@ -2378,7 +2378,7 @@ packages:
     dependencies:
       '@types/mdast': 3.0.10
       '@types/unist': 2.0.6
-      decode-named-character-reference: 1.0.1
+      decode-named-character-reference: 1.0.2
       mdast-util-to-string: 3.1.0
       micromark: 3.0.10
       micromark-util-decode-numeric-character-reference: 1.0.0
@@ -2458,7 +2458,7 @@ packages:
       '@types/mdast': 3.0.10
       mdast-util-to-markdown: 1.3.0
       parse-entities: 4.0.0
-      stringify-entities: 4.0.2
+      stringify-entities: 4.0.3
       unist-util-remove-position: 4.0.1
       unist-util-stringify-position: 3.0.2
       vfile-message: 3.1.2
@@ -2504,7 +2504,7 @@ packages:
   /micromark-core-commonmark/1.0.6:
     resolution: {integrity: sha512-K+PkJTxqjFfSNkfAhp4GB+cZPfQd6dxtTXnf+RjZOV7T4EEXnvgzOcnp+eSTmpGk9d1S9sL6/lqrgSNn/s0HZA==}
     dependencies:
-      decode-named-character-reference: 1.0.1
+      decode-named-character-reference: 1.0.2
       micromark-factory-destination: 1.0.0
       micromark-factory-label: 1.0.2
       micromark-factory-space: 1.0.0
@@ -2722,7 +2722,7 @@ packages:
   /micromark-util-decode-string/1.0.2:
     resolution: {integrity: sha512-DLT5Ho02qr6QWVNYbRZ3RYOSSWWFuH3tJexd3dgN1odEuPNxCngTCXJum7+ViRAd9BbdxCvMToPOD/IvVhzG6Q==}
     dependencies:
-      decode-named-character-reference: 1.0.1
+      decode-named-character-reference: 1.0.2
       micromark-util-character: 1.1.0
       micromark-util-decode-numeric-character-reference: 1.0.0
       micromark-util-symbol: 1.0.1
@@ -2780,7 +2780,7 @@ packages:
     dependencies:
       '@types/debug': 4.1.7
       debug: 4.3.4
-      decode-named-character-reference: 1.0.1
+      decode-named-character-reference: 1.0.2
       micromark-core-commonmark: 1.0.6
       micromark-factory-space: 1.0.0
       micromark-util-character: 1.1.0
@@ -2907,8 +2907,8 @@ packages:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
 
-  /node-fetch/3.2.4:
-    resolution: {integrity: sha512-WvYJRN7mMyOLurFR2YpysQGuwYrJN+qrrpHjJDuKMcSPdfFccRUla/kng2mz6HWSBxJcqPbvatS6Gb4RhOzCJw==}
+  /node-fetch/3.2.5:
+    resolution: {integrity: sha512-u7zCHdJp8JXBwF09mMfo2CL6kp37TslDl1KP3hRGTlCInBtag+UO3LGVy+NF0VzvnL3PVMpA2hXh1EtECFnyhQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
@@ -3079,7 +3079,7 @@ packages:
       character-entities: 2.0.1
       character-entities-legacy: 3.0.0
       character-reference-invalid: 2.0.1
-      decode-named-character-reference: 1.0.1
+      decode-named-character-reference: 1.0.2
       is-alphanumerical: 2.0.1
       is-decimal: 2.0.1
       is-hexadecimal: 2.0.1
@@ -3635,8 +3635,8 @@ packages:
     dependencies:
       safe-buffer: 5.2.1
 
-  /stringify-entities/4.0.2:
-    resolution: {integrity: sha512-MTxTVcEkorNtBbNpoFJPEh0kKdM6+QbMjLbaxmvaPMmayOXdr/AIVIIJX7FReUVweRBFJfZepK4A4AKgwuFpMQ==}
+  /stringify-entities/4.0.3:
+    resolution: {integrity: sha512-BP9nNHMhhfcMbiuQKCqMjhDP5yBCAxsPu4pHFFzJ6Alo9dZgY4VLDPutXqIjpRiMoKdp7Av85Gr73Q5uH9k7+g==}
     dependencies:
       character-entities-html4: 2.1.0
       character-entities-legacy: 3.0.0
@@ -4107,7 +4107,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 4.2.3
+      string-width: 1.0.2
     dev: false
     optional: true
 
