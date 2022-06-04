@@ -9,7 +9,11 @@ function isVideo(src) {
   return src.match(/.mp4|.mov/g);
 }
 
-const activities = await getActivities();
+const url = new URL(Astro.request.url);
+const page = +(url.searchParams.get("page") || 1);
+const pageSize = 1;
+
+const activities = await getActivities(page, pageSize);
 ---
 
 <Layout title="Activities Page">
@@ -24,11 +28,11 @@ const activities = await getActivities();
       {activities.map(item => (
       <li>
         <article>
-          <h2 class="title">{item.title}</h2>
+          <h2 class="title" set:text={item.title} />
           <p class="date">
-            <time datetime={item.date}>{item.date}</time>
+            <time datetime={item.date} set:text={item.date} />
           </p>
-          <p class="description">{item.description}</p>
+          <p class="description" set:text={item.description} />
           <section class="gallery">
             {item.photos.map(photo => {
 
@@ -46,6 +50,23 @@ const activities = await getActivities();
       </li>
       ))}
     </ul>
+    <div class="activities-list-nav">
+      { page > 1 ?
+      <a class="page-link" href={`?page=${page - 1}`} aria-label="Previous Page">
+        {"<"} prev </a>
+          :
+          <span class="page-link disabled" aria-hidden="true">{"<"} prev</span>
+              }
+              <span>page {page}</span>
+              <!-- sometimes the length isn't 30? -->
+              { activities.length >= pageSize ?
+              <a class="page-link" href={`?page=${page + 1}`} aria-label="Next Page">
+                more {">"}
+              </a>
+              :
+              <span class="page-link" aria-hidden="true">more {">"}</span>
+              }
+    </div>
   </Main>
 </Layout>
 
@@ -106,5 +127,22 @@ const activities = await getActivities();
     max-width: 1000px;
     border: .2em solid transparent;
     transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .activities-list-nav {
+    padding: 15px 30px;
+    text-align: center;
+    top: 55px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .activities-list-nav .page-link {
+    margin: 0 1em;
+  }
+
+  .activities-list-nav .disabled {
+    color: #aaa;
   }
 </style>

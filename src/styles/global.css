@@ -1,0 +1,83 @@
+:root {
+  --color-white: #fefeff;
+  --color-tan: #f4efed;
+  --color-tan-rgb: 244, 239, 237;
+  --color-dawn: #f3e9fa;
+  --color-dusk: #514375;
+  --color-midnight: #31274a;
+  --color-midnight-rgb: 49, 39, 74;
+  --color-blue: #1d5bfc;
+  --color-red: #ff5050;
+  --color-yellow: #ffd542;
+  --color-purple: #af43ff;
+  --color-pink: #fdb2b7;
+  --color-astro-violet: #4F39FA;
+  --color-astro-pink: #DA62C4;
+  --color-text: hsl(12, 5%, 4%);
+  --color-bg: hsl(10, 21%, 95%);
+  --color-border: hsl(17, 24%, 90%);
+
+  --gradient-astro: linear-gradient(0deg, var(--color-astro-violet), var(--color-astro-pink));
+  --gradient-pop-1: linear-gradient(180deg, #1d5bfc 0%, #c238bd 115%);
+  --gradient-pop-2: repeating-linear-gradient(135deg, #ff9776 0em, #769cff 1em, #c238bd 2em, #ff9776 3em);
+  --gradient-pop-3: linear-gradient(180deg, #ffb4b4 0%, #c487f0 100%);
+  --gradient-pop-4: linear-gradient(0deg, #632cca -33%, #62289e 10%, #30216b 50%, #1f1638 100%);
+  --gradient-pop-5: linear-gradient(180deg, #ffd542 0%, #ff5050 25%, #af43ff 100%);
+  --gradient-mood: linear-gradient(180deg, #d8c5ef 0%, rgba(225, 213, 238, 0) 100%);
+
+  --link-gradient: linear-gradient(45deg, #4F39FA, #DA62C4 30%, var(--color-border) 60%);
+
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+  --shadow-sm: 0px 19px 53px 0px rgba(var(--color-midnight-rgb), 0.03), 0px 10px 28px 0px rgba(var(--color-midnight-rgb), 0.05), 0px 6px 16px 0px rgba(var(--color-midnight-rgb), 0.05), 0px 3px 9px 0px rgba(var(--color-midnight-rgb), 0.075), 0px 1px 4px 0px rgba(var(--color-midnight-rgb), 0.1);
+  --shadow-md: 0px 2px 2px 0px rgba(var(--color-midnight-rgb), 0.04), 0px 6px 5px 0px rgba(var(--color-midnight-rgb), 0.06), 0px 15px 14px 0px rgba(var(--color-midnight-rgb), 0.08), 0px 50px 46px 0px rgba(var(--color-midnight-rgb), 0.12);
+  --shadow-xl: 0px 3px 2px 0px rgba(var(--color-midnight-rgb), 0.02), 0px 6px 5px 0px rgba(var(--color-midnight-rgb), 0.03), 0px 12px 10px 0px rgba(var(--color-midnight-rgb), 0.04), 0px 22px 18px 0px rgba(var(--color-midnight-rgb), 0.04), 0px 42px 34px 0px rgba(var(--color-midnight-rgb), 0.05), 0px 100px 80px 0px rgba(var(--color-midnight-rgb), 0.07);
+  --blur-md: blur(10px);
+  --blur-xl: blur(128px);
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--color-astro-pink);
+  text-decoration: none;
+}
+
+:global(h1) {
+  font-size: var(--font-size-xl);
+}
+
+:global(h2) {
+  font-size: var(--font-size-lg);
+}
+
+:global(code) {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+/* 'sm': '640px', */
+@media (min-width: 640px) {}
+
+/* 'md': '768px', */
+@media (min-width: 768px) {}
+
+/* 'lg': '1024px', */
+@media (min-width: 1024px) {}
+
+/* 'xl': '1280px', */
+@media (min-width: 1280px) {}
+
+/* '2xl': '1536px', */
+@media (min-width: 1536px) {}

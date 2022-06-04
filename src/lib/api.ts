@@ -1,3 +1,4 @@
+import activitiesJSON from "./activities.json";
 export interface Activity {
   id: string;
   link: string;
@@ -14,8 +15,16 @@ export interface Activity {
   photos: string[];
 }
 
-export function getActivities(): Promise<Activity[]> {
+export function getActivities(
+  page_number: number = 1,
+  page_size: number = 5
+): Promise<Activity[]> {
   return new Promise((res) => {
-    return res([]);
+    const data = activitiesJSON.slice(
+      (page_number - 1) * page_size,
+      page_number * page_size
+    );
+
+    return res(data);
   });
 }
