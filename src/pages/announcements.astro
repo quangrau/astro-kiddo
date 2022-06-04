@@ -4,9 +4,13 @@ import Card from '../components/Card.astro';
 import Navbar from '../components/Navbar.astro';
 import Instruction from '../components/Instruction.astro';
 import Main from '../components/Main.astro';
+import { getAnnouncements } from '../lib/api';
 
-const response = await fetch('./mock/annoucements.json');
-const data = await response.json();
+const url = new URL(Astro.request.url);
+const page = +(url.searchParams.get("page") || 1);
+const pageSize = 5;
+
+const announcements = await getAnnouncements(page, pageSize);
 ---
 
 <Layout title="Announcements Page">
@@ -17,10 +21,27 @@ const data = await response.json();
     </Instruction>
 
     <ul role="list" class="link-card-grid">
-      {data.map(item => (
+      {announcements.map(item => (
       <Card href={item.link} title={item.title} subTitle={item.date} body={item.description} />
       ))}
     </ul>
+    <div class="list-nav">
+      { page > 1 ?
+      <a class="page-link" href={`?page=${page - 1}`} aria-label="Previous Page">
+        {"<"} prev </a>
+          :
+          <span class="page-link disabled" aria-hidden="true">{"<"} prev</span>
+              }
+              <span>page {page}</span>
+              <!-- sometimes the length isn't 30? -->
+              {announcements.length >= pageSize ?
+              <a class="page-link" href={`?page=${page + 1}`} aria-label="Next Page">
+                more {">"}
+              </a>
+              :
+              <span class="page-link" aria-hidden="true">more {">"}</span>
+              }
+    </div>
   </Main>
 </Layout>
 
@@ -30,5 +51,22 @@ const data = await response.json();
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
+  }
+
+  .list-nav {
+    padding: 15px 30px;
+    text-align: center;
+    top: 55px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .list-nav .page-link {
+    margin: 0 1em;
+  }
+
+  .list-nav .disabled {
+    color: #aaa;
   }
 </style>
